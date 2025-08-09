@@ -6,5 +6,6 @@ const router = Router();
 router.post('/submit', /*authRequired,*/ submitAttendance);
 router.get('/history', /*authRequired,*/ history);
 router.get('/summary', /*authRequired,*/ summary);
+router.post('/mark-late', /*authRequired,*/ markLate);
 
 export default router;
