@@ -171,27 +171,44 @@ export async function summary(req, res) {
  * Allows faculty to mark a student late for a given session.
  */
 export async function markLate(req, res) {
-  const { userId, classId, codeId } = req.body || {};
-  if (!userId || !classId || !codeId) {
-    return res.status(400).json({ error: 'userId, classId, codeId are required' });
+  const { userId, classId, codeId, code } = req.body || {};
+  if (!userId || !classId || (!codeId && !code)) {
+    return res.status(400).json({ error: 'userId, classId, and codeId OR code are required' });
   }
 
   try {
+    // Resolve codeId if only code was provided
+    let resolvedCodeId = codeId;
+    if (!resolvedCodeId) {
+      const { rows } = await pool.query(
+          `SELECT id FROM attendance_codes
+         WHERE class_id=$1 AND code=$2
+         ORDER BY generated_at DESC
+         LIMIT 1`,
+          [classId, String(code)]
+      );
+      if (!rows.length) return res.status(404).json({ error: 'Session code not found for this class' });
+      resolvedCodeId = rows[0].id;
+    }
+
+    // Try update first
     const up = await pool.query(
         `UPDATE attendance_records
-         SET is_late = true, marked_at = CURRENT_TIMESTAMP
-         WHERE student_id=$1 AND class_id=$2 AND code_id=$3
-           RETURNING id, marked_at, is_late`,
-        [userId, classId, codeId]
+       SET is_late = true, marked_at = CURRENT_TIMESTAMP
+       WHERE student_id=$1 AND class_id=$2 AND code_id=$3
+       RETURNING id, marked_at, is_late`,
+        [userId, classId, resolvedCodeId]
     );
 
     if (up.rowCount === 0) {
+      // If no record, insert and mark late
       const ins = await pool.query(
           `INSERT INTO attendance_records (student_id, class_id, code_id, is_late)
-           VALUES ($1, $2, $3, true)
-             ON CONFLICT (student_id, class_id, code_id) DO UPDATE SET is_late = true, marked_at = CURRENT_TIMESTAMP
-                                                              RETURNING id, marked_at, is_late`,
-          [userId, classId, codeId]
+         VALUES ($1,$2,$3,true)
+         ON CONFLICT (student_id, class_id, code_id)
+         DO UPDATE SET is_late=true, marked_at=CURRENT_TIMESTAMP
+         RETURNING id, marked_at, is_late`,
+          [userId, classId, resolvedCodeId]
       );
       return res.json({ ok: true, ...ins.rows[0] });
     }
@@ -202,6 +219,7 @@ export async function markLate(req, res) {
     return res.status(500).json({ error: 'Server error' });
   }
 }
+
 
 /**
  * GET /api/attendance/reports/low-attendance?classId=1&threshold=0.8

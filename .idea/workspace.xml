@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79010fd6-7f8a-43d9-823c-a0c155b0b340" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/online-attendance-system/backend/src/controllers/reportsController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/online-attendance-system/backend/src/routes/reports.js" afterDir="false" />
+    <list default="true" id="79010fd6-7f8a-43d9-823c-a0c155b0b340" name="Changes" comment="fixed the frontend and backend and connected the local database">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/online-attendance-system/backend/src/controllers/attendanceController.js" beforeDir="false" afterPath="$PROJECT_DIR$/online-attendance-system/backend/src/controllers/attendanceController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online-attendance-system/backend/src/routes/attendance.js" beforeDir="false" afterPath="$PROJECT_DIR$/online-attendance-system/backend/src/routes/attendance.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-attendance-system/frontend/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/online-attendance-system/frontend/history.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +29,9 @@
     &quot;accountId&quot;: &quot;f814069d-a7f3-48e4-93ac-c6f9179789fc&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/online-attendance-system/backend/src/controllers/attendanceController.js" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -74,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1754711873560</updated>
-      <workItem from="1754711875894" duration="13090000" />
+      <workItem from="1754711875894" duration="16693000" />
     </task>
     <servers />
   </component>
