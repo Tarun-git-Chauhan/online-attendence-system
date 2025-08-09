@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Faculty Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+    }
+
+    header {
+      background-color: #8B0000;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .profile-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 40px;
+    }
+
+    .info {
+      flex: 1;
+    }
+
+    .info h2 {
+      color: #8B0000;
+    }
+
+    .info p {
+      font-size: 18px;
+      margin: 8px 0;
+    }
+
+    .profile-image {
+      flex: 1;
+      text-align: right;
+    }
+
+    .profile-image img {
+      width: 200px;
+      height: 200px;
+      border-radius: 100px;
+      object-fit: cover;
+      border: 3px solid #8B0000;
+    }
+
+    .footer-buttons {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 40px;
+    }
+
+    button {
+      background-color: #8B0000;
+      color: white;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #660000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>Hi Faculty</header>
+
+  <!-- Main Profile Section -->
+  <div class="profile-container">
+    <!-- Professor Info -->
+    <div class="info">
+      <h2>Professor Information</h2>
+      <p><strong>Name:</strong> Dr. Jane Doe</p>
+      <p><strong>Email:</strong> jane.doe@university.edu</p>
+      <p><strong>Department:</strong> Computer Science</p>
+      <p><strong>Office:</strong> Room 204, Engineering Building</p>
+      <p><strong>Phone:</strong> (123) 456-7890</p>
+    </div>
+
+    <!-- Image -->
+    <div class="profile-image">
+      <img src="https://via.placeholder.com/200" alt="Professor Photo">
+    </div>
+  </div>
+
+  <!-- Footer Buttons -->
+  <div class="footer-buttons">
+    <button onclick="alert('Edit functionality coming soon!')">Edit</button>
+    <div>
+      <button onclick="location.href='FacultyDashboard.html'">Home</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <script>
+    function logout() {
+      // You can add logout logic here
+      alert("Logging out...");
+      // For now, redirect to login page or home
+      window.location.href = "login.html"; // change if needed
+    }
+  </script>
+
+</body>
+</html>

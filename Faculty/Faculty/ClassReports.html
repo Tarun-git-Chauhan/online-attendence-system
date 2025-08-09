@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Class Reports</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 0; 
+    padding: 40px 20px;
+    color: #8B0000;
+    display: flex;
+    justify-content: center;
+  }
+  .container {
+    width: 100%;
+    max-width: 450px;
+    border: 2px solid #8B0000;
+    border-radius: 10px;
+    padding: 30px 25px;
+    box-shadow: 0 0 10px rgba(139,0,0,0.2);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h1 {
+    margin-bottom: 40px;
+  }
+  label {
+    align-self: flex-start;
+    margin: 10px 0 5px 0;
+    font-weight: bold;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .suggestions {
+    margin-top: 5px;
+    width: 100%;
+    max-height: 120px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: white;
+    position: relative;
+    z-index: 10;
+  }
+  .suggestions div {
+    padding: 8px;
+    cursor: pointer;
+  }
+  .suggestions div:hover {
+    background-color: #f0f0f0;
+  }
+  button.view-reports {
+    margin-top: 25px;
+    padding: 12px 25px;
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+  }
+  button.view-reports:hover {
+    background-color: #660000;
+  }
+  .footer {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  .footer a button {
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    padding: 12px 0;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    flex-grow: 1;
+    white-space: nowrap;
+  }
+  .footer a button:hover {
+    background-color: #660000;
+  }
+  .summary-text {
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 18px;
+    align-self: flex-start;
+  }
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Hi Faculty!</h1>
+
+    <div class="summary-text">Here is class report summary</div>
+
+    <label for="course">Select Course:</label>
+    <input type="text" id="course" placeholder="Type course (e.g., INFO 2411)" oninput="filterCourses()" autocomplete="off"/>
+    <div id="courseSuggestions" class="suggestions"></div>
+
+    <label for="section">Select Section:</label>
+    <input type="text" id="section" placeholder="Type section (e.g., I1)" oninput="filterSections()" autocomplete="off"/>
+    <div id="sectionSuggestions" class="suggestions"></div>
+
+    <button class="view-reports" onclick="goToReports()">View Reports</button>
+
+    <div class="footer">
+      <a href="FacultyDashboard.html"><button>Home</button></a>
+      <a href="ViewAll.html"><button>View All</button></a>
+    </div>
+  </div>
+
+<script>
+  const courseData = {
+    "INFO 2411": ["I1", "I2", "I3", "I4", "I5"],
+    "INFO 5674": ["I1", "I2", "I3", "I4", "I5"],
+    "INFO 2342": ["I1", "I2", "I3", "I4", "I5"],
+    "INFO 6754": ["I1", "I2", "I3", "I4", "I5"],
+    "INFO 1234": ["I1", "I2", "I3", "I4", "I5"],
+    "ENG 5678": ["E1", "E2", "E3", "E4"],
+    "ENG 1140": ["E1", "E2", "E3", "E4"],
+    "ENG 4532": ["E1", "E2", "E3", "E4"],
+    "PHIL 1250": ["P1", "P2", "P3", "P4"],
+    "PHIL 1OGIL": ["P1", "P2", "P3", "P4"],
+  };
+
+  let selectedCourse = null;
+
+  function filterCourses() {
+    const input = document.getElementById('course').value.toUpperCase();
+    const courseSuggestions = document.getElementById('courseSuggestions');
+    const sectionSuggestions = document.getElementById('sectionSuggestions');
+    sectionSuggestions.innerHTML = '';
+    selectedCourse = null;
+
+    const filtered = Object.keys(courseData).filter(c => c.toUpperCase().includes(input));
+    courseSuggestions.innerHTML = '';
+    filtered.forEach(course => {
+      const div = document.createElement('div');
+      div.textContent = course;
+      div.onclick = () => {
+        document.getElementById('course').value = course;
+        selectedCourse = course;
+        courseSuggestions.innerHTML = '';
+        displaySections(course);
+      };
+      courseSuggestions.appendChild(div);
+    });
+  }
+
+  function displaySections(course) {
+    const sectionInput = document.getElementById('section');
+    const sectionSuggestions = document.getElementById('sectionSuggestions');
+    sectionSuggestions.innerHTML = '';
+    sectionInput.value = '';
+    if (!courseData[course]) return;
+    courseData[course].forEach(sec => {
+      const div = document.createElement('div');
+      div.textContent = sec;
+      div.onclick = () => {
+        sectionInput.value = sec;
+        sectionSuggestions.innerHTML = '';
+      };
+      sectionSuggestions.appendChild(div);
+    });
+  }
+
+  function filterSections() {
+    if (!selectedCourse) return;
+    const input = document.getElementById('section').value.toUpperCase();
+    const sectionSuggestions = document.getElementById('sectionSuggestions');
+    sectionSuggestions.innerHTML = '';
+
+    const filtered = courseData[selectedCourse].filter(sec => sec.toUpperCase().includes(input));
+    filtered.forEach(sec => {
+      const div = document.createElement('div');
+      div.textContent = sec;
+      div.onclick = () => {
+        document.getElementById('section').value = sec;
+        sectionSuggestions.innerHTML = '';
+      };
+      sectionSuggestions.appendChild(div);
+    });
+  }
+
+  function goToReports() {
+    const course = document.getElementById('course').value.trim();
+    const section = document.getElementById('section').value.trim();
+
+    if (!course || !section) {
+      alert("Please select both course and section.");
+      return;
+    }
+    window.location.href = "Reports.html";
+  }
+</script>
+
+</body>
+</html>
