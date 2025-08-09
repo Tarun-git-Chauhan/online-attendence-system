@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reset Password</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #ffffff; /* White background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #8B0000; /* Dark red text */
+    }
+
+    .reset-box {
+      background: #8B0000; /* Dark red box */
+      padding: 35px 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(139, 0, 0, 0.4);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      color: white;
+    }
+
+    .reset-box h2 {
+      color: #ffdddd; /* lighter red for heading */
+      margin-bottom: 10px;
+    }
+
+    .reset-box p {
+      color: #ffcccc; /* lighter red for paragraph */
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .reset-box input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ffdddd;
+      border-radius: 6px;
+      font-size: 15px;
+      color: #8B0000;
+      background-color: white;
+    }
+
+    .reset-box button {
+      width: 100%;
+      padding: 12px;
+      background-color: white;
+      border: none;
+      color: #8B0000;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .reset-box button:hover {
+      background-color: #ffd6d6;
+    }
+
+    .message {
+      margin-top: 20px;
+      color: #cfc;
+      font-size: 14px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="reset-box">
+    <h2>Oops! Invalid credentials</h2>
+    <p>Reset your password. Enter your registered email below.</p>
+
+    <input type="email" id="email" placeholder="Enter your email" required />
+    <button onclick="sendResetLink()">Send Reset Link</button>
+
+    <div class="message" id="message">
+      ✅ A password reset link has been sent to your registered email.
+    </div>
+  </div>
+
+  <script>
+    function sendResetLink() {
+      const emailInput = document.getElementById("email");
+      const messageDiv = document.getElementById("message");
+
+      if (emailInput.value.trim() === "") {
+        alert("Please enter your email.");
+        return;
+      }
+
+      // Simulate sending reset link
+      messageDiv.style.display = "block";
+
+      // Optional: clear the input field
+      emailInput.value = "";
+    }
+  </script>
+
+</body>
+</html>

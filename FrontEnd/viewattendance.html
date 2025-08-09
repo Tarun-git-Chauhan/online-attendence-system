@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View Attendance</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+      color: #8B0000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(139, 0, 0, 0.2);
+      padding: 30px;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      margin-bottom: 15px;
+      color: #8B0000;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+    }
+
+    .profile-btn {
+      background: rgba(139, 0, 0, 0.15);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #8B0000;
+      transition: background-color 0.3s;
+    }
+    .profile-btn:hover {
+      background: rgba(139, 0, 0, 0.3);
+    }
+
+    p {
+      color: #660000;
+      font-size: 15px;
+      margin: 20px 0;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #8B0000;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #8B0000;
+      border-radius: 6px;
+      font-size: 15px;
+      color: #8B0000;
+      background-color: #fff;
+    }
+
+    .view-btn {
+      background-color: #8B0000;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 20px;
+    }
+    .view-btn:hover {
+      background-color: #660000;
+    }
+
+    .bottom-nav {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .bottom-nav a {
+      text-decoration: none;
+      color: white;
+      background-color: #8B0000;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .bottom-nav a:hover {
+      background-color: #660000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <h1>Hi Student</h1>
+      <a href="profile.html" class="profile-btn" title="Profile">👤</a>
+    </div>
+
+    <p>Welcome! Here you can view your attendance monthly or for a single day. For visual presentation, online reports are available for your convenience.</p>
+
+    <div class="form-group">
+      <label for="course">Enter Course</label>
+      <input list="course-options" id="course" placeholder="Start typing... (e.g. info)">
+      <datalist id="course-options">
+        <option value="INFO2411">
+        <option value="INFO6754">
+        <option value="INFO3302">
+        <option value="INFO1203">
+        <option value="INFO4500">
+        <option value="PHILOSOPHY6794">
+        <option value="PHILOSOPHY6721">
+        <option value="PHILOSOPHY6900">
+        <option value="PHILOSOPHY6455">
+        <option value="PHILOSOPHY6001">
+        <option value="ENGL1100">
+        <option value="ENGL1101">
+        <option value="ENGL1102">
+        <option value="ENGL1103">
+        <option value="ENGL1104">
+        <option value="ENGL1105">
+        <option value="ENGL1106">
+        <option value="ENGL1107">
+        <option value="ENGL1108">
+        <option value="ENGL1109">
+      </datalist>
+    </div>
+
+    <div class="form-group">
+      <label for="sectionInput">Select Section</label>
+      <input list="sectionList" id="sectionInput" placeholder="Type to search section...">
+      <datalist id="sectionList">
+        <option value="I1">
+        <option value="I3">
+        <option value="P1">
+        <option value="P4">
+        <option value="E4">
+        <option value="E5">
+      </datalist>
+    </div>
+
+    <!-- Improved button for validation + navigation -->
+    <button class="view-btn" onclick="goToAttendance()">View Attendance</button>
+
+    <div class="bottom-nav">
+      <a href="loginpage.html">Home Page</a>
+      <a href="logout.html">Logout</a>
+    </div>
+  </div>
+
+  <script>
+    function goToAttendance() {
+      const course = document.getElementById('course').value.trim();
+      const section = document.getElementById('sectionInput').value.trim();
+
+      if (!course || !section) {
+        alert("Please enter both course and section.");
+        return;
+      }
+
+      // Store values for the summary page
+      sessionStorage.setItem("selectedCourse", course);
+      sessionStorage.setItem("selectedSection", section);
+
+      // Navigate to the summary page
+      window.location.href = "attendancesummary.html";
+    }
+  </script>
+
+</body>
+</html>

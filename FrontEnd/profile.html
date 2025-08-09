@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff; /* white background */
+      margin: 0;
+      padding: 0;
+      color: #8B0000; /* dark red text for outside container if needed */
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: #ffffff; /* changed to white */
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      color: #8B0000; /* dark red text */
+    }
+
+    .left-panel {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .right-panel {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      color: #8B0000; /* dark red header */
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .edit-btn {
+      background-color: #8B0000;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .edit-btn:hover {
+      background-color: #660000;
+    }
+
+    .info {
+      margin-bottom: 15px;
+      font-size: 16px;
+      color: #8B0000; /* dark red text */
+    }
+
+    .info span {
+      font-weight: bold;
+      color: #660000; /* darker red for labels */
+    }
+
+    .intro {
+      background-color: #f9d6d5; /* very light pink background for intro */
+      padding: 15px;
+      border-radius: 8px;
+      color: #660000; /* darker red text */
+      margin-top: 25px;
+      font-size: 15px;
+    }
+
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-image: url('user-icon.svg'); /* Use your profile image */
+      background-size: cover;
+      background-position: center;
+      border: 4px solid #8B0000; /* dark red border */
+    }
+
+    .nav-buttons {
+      margin-top: 40px;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+      background-color: #8B0000;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .nav-buttons a:hover {
+      background-color: #660000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="left-panel">
+      <h1>Hi Student</h1>
+      <button class="edit-btn">Edit</button>
+
+      <div class="info"><span>Name:</span> John Doe</div>
+      <div class="info"><span>Student ID:</span> STU12345</div>
+      <div class="info"><span>Email:</span> john.doe@example.com</div>
+      <div class="info"><span>Role:</span> Student</div>
+      <div class="info"><span>Emergency Contact:</span> +91 9876543210</div>
+
+      <div class="intro">
+        Welcome to the Online Student Attendance System. This platform helps institutions accurately track, manage, and improve student attendance in real-time using digital tools. Stay informed and stay connected.
+      </div>
+
+      <div class="nav-buttons">
+        <a href="loginpage.html">Home Page</a>
+        <a href="studentdashboard(1).html">Back to Dashboard</a>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="profile-img" title="Student Photo"></div>
+    </div>
+  </div>
+
+</body>
+</html>
