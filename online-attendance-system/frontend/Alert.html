@@ -1,0 +1,138 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alert Panel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 30px 20px;
+      display: flex;
+      justify-content: center;
+      color: #8B0000;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 700px;
+      border: 2px solid #8B0000;
+      border-radius: 10px;
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .alert-box {
+      background-color: #fff5f5;
+      border-left: 5px solid #8B0000;
+      padding: 15px;
+      margin-bottom: 15px;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .alert-box span {
+      flex-grow: 1;
+    }
+
+    .emoji {
+      font-size: 22px;
+      margin-left: 10px;
+    }
+
+    .cancel-btn {
+      display: block;
+      width: 100%;
+      margin-top: 30px;
+      padding: 12px;
+      font-size: 16px;
+      background-color: #8B0000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .cancel-btn:hover {
+      background-color: #660000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Message for Students with Late Attendance</h1>
+
+    <div class="alert-box">
+      <span><strong>Anureet</strong>: missed multiple classes</span>
+      <div class="emoji">⚠️</div>
+    </div>
+
+    <div class="alert-box">
+      <span><strong>Anisha</strong>: late for 4 classes</span>
+      <div class="emoji">⏰</div>
+    </div>
+
+    <button class="cancel-btn" onclick="cancelMessage()">Cancel This Message ❌</button>
+  </div>
+
+  <script>
+    function cancelMessage() {
+      alert("Message cancelled.");
+      window.location.href = "FacultyDashboard.html";
+    }
+  </script>
+
+</body>
+</html>
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alert Panel</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #fff; margin: 0; padding: 30px 20px; display: flex; justify-content: center; color: #8B0000; }
+    .container { width: 100%; max-width: 700px; border: 2px solid #8B0000; border-radius: 10px; padding: 30px; background-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h1 { text-align: center; margin-bottom: 25px; }
+    .alert-box { background-color: #fff5f5; border-left: 5px solid #8B0000; padding: 15px; margin-bottom: 15px; font-size: 18px; display: flex; align-items: center; justify-content: space-between; }
+    .alert-box span { flex-grow: 1; }
+    .emoji { font-size: 22px; margin-left: 10px; }
+    .cancel-btn { display: block; width: 100%; margin-top: 30px; padding: 12px; font-size: 16px; background-color: #8B0000; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    .cancel-btn:hover { background-color: #660000; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Message for Students with Late Attendance</h1>
+
+  <div class="alert-box"><span><strong>Anureet</strong>: missed multiple classes</span><div class="emoji">⚠️</div></div>
+  <div class="alert-box"><span><strong>Anisha</strong>: late for 4 classes</span><div class="emoji">⏰</div></div>
+
+  <button class="cancel-btn" onclick="cancelMessage()">Cancel This Message ❌</button>
+</div>
+
+<script>
+  function cancelMessage() {
+    alert("Message cancelled.");
+    window.location.href = "FacultyDashboard.html";
+  }
+</script>
+
+</body>
+</html>

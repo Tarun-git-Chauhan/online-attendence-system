@@ -1,0 +1,253 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>View Reports</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            padding: 20px;
+            border: 2px solid #8B0000;
+            border-radius: 8px;
+            margin-top: 30px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #8B0000;
+            font-size: 24px;
+        }
+
+        .button {
+            background-color: #8B0000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: #660000;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .summary {
+            margin-top: 30px;
+        }
+
+        .summary-box {
+            display: inline-block;
+            padding: 10px;
+            margin: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            font-size: 18px;
+            font-weight: bold;
+            width: 200px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 20px; /* Space between buttons */
+        }
+
+        .footer button {
+            background-color: #8B0000;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            flex: 1; /* Equal width */
+            max-width: 200px; /* Limit max width */
+            box-sizing: border-box;
+            white-space: nowrap; /* Prevent text wrap */
+        }
+
+        .footer button:hover {
+            background-color: #660000;
+        }
+
+        /* Make the <a> wrap around button look clean */
+        .footer a {
+            flex: 1;
+            max-width: 200px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        &lt;!&ndash; Class Reports Button &ndash;&gt;
+        <a href="ClassReports.html" class="button">Class Reports</a>
+
+        <h1>Live Attendance Table</h1>
+
+        &lt;!&ndash; Attendance Table &ndash;&gt;
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Time Submitted</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>9:00 AM</td>
+                    <td>Present</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>9:05 AM</td>
+                    <td>Late</td>
+                </tr>
+                <tr>
+                    <td>Emily White</td>
+                    <td>9:10 AM</td>
+                    <td>Absent</td>
+                </tr>
+                <tr>
+                    <td>Michael Brown</td>
+                    <td>9:02 AM</td>
+                    <td>Present</td>
+                </tr>
+            </tbody>
+        </table>
+
+        &lt;!&ndash; Current Date &ndash;&gt;
+        <p><strong>Current Date:</strong> <span id="currentDate"></span></p>
+
+        &lt;!&ndash; Attendance Summary &ndash;&gt;
+        <div class="summary">
+            <div class="summary-box">
+                Total Present: <span id="presentCount">2</span>
+            </div>
+            <div class="summary-box">
+                Total Absent: <span id="absentCount">1</span>
+            </div>
+            <div class="summary-box">
+                Total Late: <span id="lateCount">1</span>
+            </div>
+        </div>
+
+        &lt;!&ndash; Footer with Home and Logout buttons &ndash;&gt;
+        <div class="footer">
+            <a href="FacultyDashboard.html"><button>Home</button></a>
+            <a href="Logout.html"><button>Logout</button></a>
+        </div>
+    </div>
+
+    <script>
+        // Set current date on page load
+        const currentDateElement = document.getElementById("currentDate");
+        const currentDate = new Date().toLocaleDateString();
+        currentDateElement.textContent = currentDate;
+
+        // Example attendance counts
+        document.getElementById("presentCount").textContent = "2";
+        document.getElementById("absentCount").textContent = "1";
+        document.getElementById("lateCount").textContent = "1";
+    </script>
+</body>
+</html>
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>View Reports</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #fff; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .container { max-width: 900px; padding: 20px; border: 2px solid #8B0000; border-radius: 8px; margin-top: 30px; width: 100%; box-sizing: border-box; }
+        h1 { color: #8B0000; font-size: 24px; }
+        .button { background-color: #8B0000; color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 16px; margin-bottom: 20px; text-decoration: none; display: inline-block; }
+        .button:hover { background-color: #660000; }
+        table { width: 100%; margin-top: 20px; border-collapse: collapse; }
+        table th, table td { padding: 10px; border: 1px solid #ddd; text-align: center; }
+        .summary { margin-top: 30px; }
+        .summary-box { display: inline-block; padding: 10px; margin: 10px; background-color: #f0f0f0; border: 1px solid #ccc; font-size: 18px; font-weight: bold; width: 200px; }
+        .footer { margin-top: 30px; display: flex; justify-content: space-between; width: 100%; gap: 20px; }
+        .footer button { background-color: #8B0000; color: white; padding: 12px 25px; border: none; cursor: pointer; font-size: 16px; flex: 1; max-width: 200px; box-sizing: border-box; white-space: nowrap; }
+        .footer button:hover { background-color: #660000; }
+        .footer a { flex: 1; max-width: 200px; text-decoration: none; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="ClassReports.html" class="button">Class Reports</a>
+
+    <h1>Live Attendance Table</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Time Submitted</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr><td>John Doe</td><td>9:00 AM</td><td>Present</td></tr>
+        <tr><td>Jane Smith</td><td>9:05 AM</td><td>Late</td></tr>
+        <tr><td>Emily White</td><td>9:10 AM</td><td>Absent</td></tr>
+        <tr><td>Michael Brown</td><td>9:02 AM</td><td>Present</td></tr>
+        </tbody>
+    </table>
+
+    <p><strong>Current Date:</strong> <span id="currentDate"></span></p>
+
+    <div class="summary">
+        <div class="summary-box">Total Present: <span id="presentCount">2</span></div>
+        <div class="summary-box">Total Absent: <span id="absentCount">1</span></div>
+        <div class="summary-box">Total Late: <span id="lateCount">1</span></div>
+    </div>
+
+    <div class="footer">
+        <a href="FacultyDashboard.html"><button>Home</button></a>
+        <a href="Logout.html"><button>Logout</button></a>
+    </div>
+</div>
+
+<script>
+    document.getElementById("currentDate").textContent = new Date().toLocaleDateString();
+</script>
+</body>
+</html>

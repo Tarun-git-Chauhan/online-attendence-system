@@ -1,0 +1,205 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>View All Classes Summary</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 30px 20px;
+      display: flex;
+      justify-content: center;
+      color: #8B0000;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 950px;
+      padding: 30px;
+      border: 2px solid #8B0000;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 25px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #8B0000;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+      cursor: pointer;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .footer a {
+      text-decoration: none;
+      flex: 1;
+    }
+
+    .footer button {
+      background-color: #8B0000;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .footer button:hover {
+      background-color: #660000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Summary of All Classes</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Class</th>
+          <th>Section</th>
+          <th>Attendance Percentage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr onclick="openReport('INFO 2411', 'I1')">
+          <td>INFO 2411</td>
+          <td>I1</td>
+          <td>95%</td>
+        </tr>
+        <tr onclick="openReport('INFO 2411', 'I2')">
+          <td>INFO 2411</td>
+          <td>I2</td>
+          <td>89%</td>
+        </tr>
+        <tr onclick="openReport('ENG 5678', 'E1')">
+          <td>ENG 5678</td>
+          <td>E1</td>
+          <td>92%</td>
+        </tr>
+        <tr onclick="openReport('PHIL 1250', 'P1')">
+          <td>PHIL 1250</td>
+          <td>P1</td>
+          <td>88%</td>
+        </tr>
+        <tr onclick="openReport('INFO 5674', 'I1')">
+          <td>INFO 5674</td>
+          <td>I1</td>
+          <td>90%</td>
+        </tr>
+        <tr onclick="openReport('ENG 1140', 'E2')">
+          <td>ENG 1140</td>
+          <td>E2</td>
+          <td>94%</td>
+        </tr>
+        &lt;!&ndash; Add more rows as needed &ndash;&gt;
+      </tbody>
+    </table>
+
+    <div class="footer">
+      <a href="FacultyDashboard.html"><button>Home Page</button></a>
+      <a href="Logout.html"><button>Logout</button></a>
+    </div>
+  </div>
+
+  <script>
+    function openReport(className, section) {
+      // Open the report page for the selected class/section
+      window.location.href = `Report.html?class=${className}&section=${section}`;
+    }
+  </script>
+
+</body>
+</html>
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>View All Classes Summary</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #fff; margin: 0; padding: 30px 20px; display: flex; justify-content: center; color: #8B0000; }
+    .container { width: 100%; max-width: 950px; padding: 30px; border: 2px solid #8B0000; border-radius: 10px; background-color: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h1 { text-align: center; margin-bottom: 30px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 25px; }
+    th, td { border: 1px solid #ccc; padding: 12px; text-align: center; }
+    th { background-color: #8B0000; color: white; }
+    tr:hover { background-color: #f5f5f5; cursor: pointer; }
+    .footer { display: flex; justify-content: space-between; margin-top: 20px; }
+    .footer a { text-decoration: none; flex: 1; }
+    .footer button { background-color: #8B0000; color: white; padding: 12px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; }
+    .footer button:hover { background-color: #660000; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Summary of All Classes</h1>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Class</th>
+      <th>Section</th>
+      <th>Attendance Percentage</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr onclick="openReport('INFO 2411', 'I1')"><td>INFO 2411</td><td>I1</td><td>95%</td></tr>
+    <tr onclick="openReport('INFO 2411', 'I2')"><td>INFO 2411</td><td>I2</td><td>89%</td></tr>
+    <tr onclick="openReport('ENG 5678', 'E1')"><td>ENG 5678</td><td>E1</td><td>92%</td></tr>
+    <tr onclick="openReport('PHIL 1250', 'P1')"><td>PHIL 1250</td><td>P1</td><td>88%</td></tr>
+    <tr onclick="openReport('INFO 5674', 'I1')"><td>INFO 5674</td><td>I1</td><td>90%</td></tr>
+    <tr onclick="openReport('ENG 1140', 'E2')"><td>ENG 1140</td><td>E2</td><td>94%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <a href="FacultyDashboard.html"><button>Home Page</button></a>
+    <a href="Logout.html"><button>Logout</button></a>
+  </div>
+</div>
+
+<script>
+  function openReport(className, section) {
+    // Pass params if you want to read them on Reports.html later
+    window.location.href = `Reports.html?class=${encodeURIComponent(className)}&section=${encodeURIComponent(section)}`;
+  }
+</script>
+
+</body>
+</html>

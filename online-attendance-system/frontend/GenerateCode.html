@@ -1,0 +1,275 @@
+<!--
+&lt;!&ndash;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 500px;
+            padding: 20px;
+            border: 2px solid #8B0000;
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #8B0000;
+            font-size: 24px;
+        }
+
+        .code-box {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .timer {
+            margin-left: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #FF4500;
+        }
+
+        .footer {
+            margin-top: 20px;
+            color: #8B0000;
+        }
+
+        .footer a {
+            color: #8B0000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Code is visible to the students</h1>
+
+        &lt;!&ndash; Display the generated code &ndash;&gt;
+        <div>
+            <div class="code-box" id="codeBox">ABC123XYZ</div>
+            <div class="timer" id="timer">3</div> &lt;!&ndash; Timer for 3 seconds &ndash;&gt;
+        </div>
+
+        &lt;!&ndash; Expiry message &ndash;&gt;
+        <div class="footer">
+            <p>Code will expire in <span id="expireTime">3</span> seconds, and you will be directed to the <a href="index.html">Welcome Page</a> automatically.</p>
+        </div>
+    </div>
+
+    <script>
+        // Timer functionality to count down from 3 seconds
+        let countdown = 3;
+        const timerElement = document.getElementById("timer");
+        const expireTimeElement = document.getElementById("expireTime");
+
+        const countdownInterval = setInterval(() => {
+            countdown&#45;&#45;;
+            timerElement.textContent = countdown;
+            expireTimeElement.textContent = countdown;
+
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+                // Redirect to the Faculty Dashboard page (index.html or dashboard.html)
+                window.location.href = "index.html";  // or "dashboard.html" if that's your dashboard URL
+            }
+        }, 1000); // 1-second interval
+    </script>
+
+</body>
+</html>
+&ndash;&gt;
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Code</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #fff; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column; text-align: center; }
+        .container { max-width: 500px; padding: 20px; border: 2px solid #8B0000; border-radius: 8px; }
+        h1 { color: #8B0000; font-size: 24px; }
+        .code-box { margin-top: 20px; padding: 20px; background-color: #f0f0f0; border: 1px solid #ccc; font-size: 24px; font-weight: bold; color: #333; border-radius: 5px; display: inline-block; }
+        .timer { margin-left: 20px; font-size: 20px; font-weight: bold; color: #FF4500; }
+        .footer { margin-top: 20px; color: #8B0000; }
+        .footer a { color: #8B0000; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Code is visible to the students</h1>
+
+    <div>
+        <div class="code-box" id="codeBox">AB12YZ</div>
+        <div class="timer" id="timer"></div>
+    </div>
+
+    <div class="footer">
+        <p>Code will expire in <span id="expireTime">3</span> seconds, and you will be directed to the <a href="FacultyDashboard.html">Faculty Dashboard</a> automatically.</p>
+    </div>
+</div>
+
+<script>
+    let countdown = 7;
+    const timerElement = document.getElementById("timer");
+    const expireTimeElement = document.getElementById("expireTime");
+
+    const countdownInterval = setInterval(() => {
+        countdown&#45;&#45;;
+        timerElement.textContent = countdown;
+        expireTimeElement.textContent = countdown;
+
+        if (countdown <= 0) {
+            clearInterval(countdownInterval);
+            window.location.href = "FacultyDashboard.html";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Generate Code</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #fff; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column; text-align: center; }
+        .container { max-width: 520px; padding: 20px; border: 2px solid #8B0000; border-radius: 10px; }
+        h1 { color: #8B0000; font-size: 24px; margin: 0; }
+        .row { display: inline-flex; align-items: center; gap: 14px; margin-top: 18px; }
+        .code-box { padding: 18px 22px; background-color: #f0f0f0; border: 1px solid #ccc; font-size: 28px; font-weight: bold; color: #333; border-radius: 8px; letter-spacing: 2px; }
+        .timer { font-size: 20px; font-weight: bold; color: #FF4500; min-width: 40px; text-align: right; }
+        .footer { margin-top: 16px; color: #8B0000; }
+        .footer a { color: #8B0000; text-decoration: none; font-weight: bold; }
+        .muted { color:#666; font-size: 12px; margin-top:6px; }
+        button.copy { border: 1px solid #8B0000; background:#fff; color:#8B0000; padding:8px 10px; border-radius:8px; cursor:pointer; font-weight:600; }
+        button.copy:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Code is visible to the students</h1>
+
+    <div class="row">
+        <div class="code-box" id="codeBox">———</div>
+        <button class="copy" id="copyBtn" title="Copy code">Copy</button>
+        <div class="timer" id="timer">7</div>
+    </div>
+    <div class="muted">This code will be valid for 7 seconds.</div>
+
+    <div class="footer">
+        <p>Code will expire in <span id="expireTime">7</span> seconds, then you’ll be redirected to the <a href="FacultyDashboard.html">Faculty Dashboard</a> automatically.</p>
+    </div>
+</div>
+
+<script>
+    // Generate a random 6‑char code (A‑Z, 0‑9) excluding confusing chars (I, O, 0, 1)
+    function generateCode(len = 6) {
+        const alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+        // Use crypto if available for better randomness
+        const arr = (window.crypto && window.crypto.getRandomValues) ? new Uint32Array(len) : null;
+        let out = '';
+        if (arr) {
+            window.crypto.getRandomValues(arr);
+            for (let i = 0; i < len; i++) out += alphabet[arr[i] % alphabet.length];
+        } else {
+            for (let i = 0; i < len; i++) out += alphabet[Math.floor(Math.random() * alphabet.length)];
+        }
+        return out;
+    }
+
+    // Set the code
+    const codeBox = document.getElementById('codeBox');
+    const code = generateCode(6);
+    codeBox.textContent = code;
+
+    // Optional: expose current code for other pages (clear on expiry)
+    try { localStorage.setItem('currentAttendanceCode', code); } catch(e) {}
+
+    // 7‑second countdown + redirect
+    let countdown = 7;
+    const timerEl = document.getElementById('timer');
+    const expireEl = document.getElementById('expireTime');
+
+    const tick = setInterval(() => {
+        countdown--;
+        timerEl.textContent = countdown;
+        expireEl.textContent = countdown;
+        if (countdown <= 0) {
+            clearInterval(tick);
+            // Clear stored code on expiry
+            try { localStorage.removeItem('currentAttendanceCode'); } catch(e) {}
+            window.location.href = "FacultyDashboard.html";
+        }
+    }, 1000);
+
+    // Copy button
+    const copyBtn = document.getElementById('copyBtn');
+    copyBtn.addEventListener('click', async () => {
+        try {
+            await navigator.clipboard.writeText(code);
+            const old = copyBtn.textContent;
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => (copyBtn.textContent = old), 900);
+        } catch (e) {
+            // Fallback: select text
+            const r = document.createRange();
+            r.selectNodeContents(codeBox);
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(r);
+            document.execCommand('copy');
+            sel.removeAllRanges();
+            const old = copyBtn.textContent;
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => (copyBtn.textContent = old), 900);
+        }
+    });
+
+    /* ─────────────────────────────────────────────────────────────────
+       If you want to also create this code server‑side with a 7s expiry:
+       POST http://localhost:3000/api/codes/generate
+       body: { classId: <id>, facultyId: <id>, code: <code>, ttlSeconds: 7 }
+
+       fetch('http://localhost:3000/api/codes/generate', {
+         method:'POST',
+         headers:{'Content-Type':'application/json'},
+         body: JSON.stringify({ classId: 1, facultyId: 4, code, ttlSeconds: 7 })
+       }).catch(()=>{});
+       ───────────────────────────────────────────────────────────────── */
+</script>
+
+</body>
+</html>
