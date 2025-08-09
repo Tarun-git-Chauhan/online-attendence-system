@@ -27,3 +27,7 @@ FrontEnd/.env
 # Misc
 *.zip
 
+node_modules/
+.env
+attendance-backend/.env
+FrontEnd/.env
