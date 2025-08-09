@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79010fd6-7f8a-43d9-823c-a0c155b0b340" name="Changes" comment="">
+    <list default="true" id="79010fd6-7f8a-43d9-823c-a0c155b0b340" name="Changes" comment="fixed the frontend and backend and connected the local database">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online-attendance-system/frontend/loginpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/online-attendance-system/frontend/loginpage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online-attendance-system/frontend/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/online-attendance-system/frontend/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-attendance-system/backend/src/controllers/attendanceController.js" beforeDir="false" afterPath="$PROJECT_DIR$/online-attendance-system/backend/src/controllers/attendanceController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-attendance-system/frontend/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/online-attendance-system/frontend/history.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +29,16 @@
     &quot;accountId&quot;: &quot;f814069d-a7f3-48e4-93ac-c6f9179789fc&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/online-attendance-system/backend/src/controllers/attendanceController.js" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="312AcTYH6QuR77CNPiVTzzEGGA2" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -69,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1754711873560</updated>
-      <workItem from="1754711875894" duration="12384000" />
+      <workItem from="1754711875894" duration="16693000" />
     </task>
     <servers />
   </component>

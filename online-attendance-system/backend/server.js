@@ -7,6 +7,7 @@ dotenv.config();
 import authRoutes from './src/routes/auth.js';
 import attendanceRoutes from './src/routes/attendance.js';
 import facultyRoutes from './src/routes/faculty.js';
+import reportsRoutes from './src/routes/reports.js';
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -37,6 +38,7 @@ app.get('/', (req,res) => res.json({ ok:true, service: 'attendance-backend-node'
 app.use('/api/auth', authRoutes);
 app.use('/api/attendance', attendanceRoutes);
 app.use('/api/faculty', facultyRoutes);
+app.use('/api/reports', reportsRoutes);
 
 // Fallback
 app.use((req,res) => res.status(404).json({ error: 'Not found'}));

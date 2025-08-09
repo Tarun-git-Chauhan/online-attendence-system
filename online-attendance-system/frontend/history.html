@@ -193,7 +193,7 @@
     </div>
   </div>
 
-  <script>
+  <!--<script>
     const filterMonth = document.getElementById('filterMonth');
     const startDate = document.getElementById('startDate');
     const endDate = document.getElementById('endDate');
@@ -290,6 +290,25 @@
   }
 })();
 
-</script>
+</script>-->
+  <script>
+    (async function () {
+      const user = JSON.parse(localStorage.getItem('user')||'null');
+      const course = sessionStorage.getItem('selectedCourse');
+      if (!user || !course) return;
+
+      const url = `http://localhost:4000/api/attendance/history?userId=${user.id}&course=${encodeURIComponent(course)}`;
+      const res = await fetch(url);
+      const data = await res.json();
+
+      const tbody = document.querySelector('table tbody') || document.createElement('tbody');
+      (data.history || []).forEach(r => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${r.date}</td><td>${r.time}</td><td>${r.status}</td>`;
+        tbody.appendChild(tr);
+      });
+    })();
+  </script>
+
 </body>
 </html>
