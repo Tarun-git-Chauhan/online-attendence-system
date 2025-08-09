@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            background-color: #8B0000; /* Dark Red */
+            color: white;
+            width: 250px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar h2 {
+            margin-top: 0;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header button {
+            background-color: #8B0000;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        .input-field {
+            margin-top: 20px;
+            width: 100%;
+        }
+        .input-field select, .input-field input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .generate-btn {
+            background-color: #8B0000;
+            color: white;
+            padding: 15px;
+            border: none;
+            font-size: 18px;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .footer button {
+            background-color: #8B0000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .footer button:hover {
+            background-color: #660000;
+        }
+        .back-arrow {
+            font-size: 18px;
+        }
+        .suggestions {
+            margin-top: 10px;
+            max-height: 100px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+        }
+        .suggestions div {
+            padding: 8px;
+            cursor: pointer;
+        }
+        .suggestions div:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Welcome Faculty</h2>
+            <a href="profile.html"><button>Profile</button></a>
+            <a href="logout.html"><button>Logout</button></a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header with profile and logout buttons -->
+            <div class="header">
+                <h3>Dashboard</h3>
+                <div>
+                    <button onclick="location.href='profile.html'">Profile</button>
+                    <button onclick="location.href='logout.html'">Logout</button>
+                </div>
+            </div>
+
+            <!-- Course and Section input fields -->
+            <div class="input-field">
+                <label for="course">Enter Course:</label>
+                <input type="text" id="course" oninput="filterCourses()" placeholder="Type course (e.g., INFO 2411)">
+                <div id="courseSuggestions" class="suggestions"></div>
+            </div>
+
+            <div class="input-field">
+                <label for="section">Enter Section:</label>
+                <input type="text" id="section" oninput="filterSections()" placeholder="Type section (e.g., I1)">
+                <div id="sectionSuggestions" class="suggestions"></div>
+            </div>
+
+            <!-- Generate Code Button -->
+            <a href="GenerateCode.html"><button class="generate-btn">Generate Code</button></a>
+
+            <!-- Footer with back arrow and view reports -->
+            <div class="footer">
+                <button class="back-arrow">&#8592; Back</button>
+                <a href="ViewReports.html"><button>View Reports</button></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data structure for courses and their respective sections
+        const courseData = {
+            "INFO 2411": ["I1", "I2", "I3", "I4", "I5"],
+            "INFO 5674": ["I1", "I2", "I3", "I4", "I5"],
+            "INFO 2342": ["I1", "I2", "I3", "I4", "I5"],
+            "INFO 6754": ["I1", "I2", "I3", "I4", "I5"],
+            "INFO 1234": ["I1", "I2", "I3", "I4", "I5"],
+            "ENG 5678": ["E1", "E2", "E3", "E4"],
+            "ENG 1140": ["E1", "E2", "E3", "E4"],
+            "ENG 4532": ["E1", "E2", "E3", "E4"],
+            "PHIL 1250": ["P1", "P2", "P3", "P4"],
+            "PHIL 1OGIL": ["P1", "P2", "P3", "P4"],
+            // Add more courses and sections here if needed
+        };
+
+        let selectedCourse = null;  // Store selected course
+
+        // Filter courses based on user input
+        function filterCourses() {
+            const courseInput = document.getElementById('course').value.toUpperCase();
+            const courseSuggestionsDiv = document.getElementById('courseSuggestions');
+            const sectionSuggestionsDiv = document.getElementById('sectionSuggestions');
+            
+            // Clear section suggestions when course changes
+            sectionSuggestionsDiv.innerHTML = '';
+
+            // Filter and display course suggestions
+            const filteredCourses = Object.keys(courseData).filter(course => course.toUpperCase().includes(courseInput));
+            courseSuggestionsDiv.innerHTML = '';
+
+            filteredCourses.forEach(course => {
+                const div = document.createElement('div');
+                div.textContent = course;
+                div.onclick = () => {
+                    document.getElementById('course').value = course;
+                    selectedCourse = course;  // Store the selected course
+                    displaySections(course);
+                    courseSuggestionsDiv.innerHTML = ''; // Clear course suggestions
+                };
+                courseSuggestionsDiv.appendChild(div);
+            });
+        }
+
+        // Display sections based on the selected course
+        function displaySections(course) {
+            const sectionInput = document.getElementById('section');
+            const sectionSuggestionsDiv = document.getElementById('sectionSuggestions');
+            sectionSuggestionsDiv.innerHTML = '';
+
+            const sections = courseData[course];
+
+            if (sections) {
+                sections.forEach(section => {
+                    const div = document.createElement('div');
+                    div.textContent = section;
+                    div.onclick = () => {
+                        sectionInput.value = section;
+                        sectionSuggestionsDiv.innerHTML = ''; // Clear section suggestions
+                    };
+                    sectionSuggestionsDiv.appendChild(div);
+                });
+            }
+        }
+
+        // Filter sections based on the user's input
+        function filterSections() {
+            if (!selectedCourse) {
+                return;  // Don't filter sections if no course is selected
+            }
+
+            const sectionInput = document.getElementById('section').value.toUpperCase();
+            const sectionSuggestionsDiv = document.getElementById('sectionSuggestions');
+
+            const sections = courseData[selectedCourse];
+
+            if (sections) {
+                // Filter and display section suggestions based on input
+                const filteredSections = sections.filter(section => section.toUpperCase().includes(sectionInput));
+                sectionSuggestionsDiv.innerHTML = '';
+
+                filteredSections.forEach(section => {
+                    const div = document.createElement('div');
+                    div.textContent = section;
+                    div.onclick = () => {
+                        document.getElementById('section').value = section;
+                        sectionSuggestionsDiv.innerHTML = ''; // Clear section suggestions
+                    };
+                    sectionSuggestionsDiv.appendChild(div);
+                });
+            }
+        }
+    </script>
+
+</body>
+</html>

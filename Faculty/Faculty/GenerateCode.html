@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 500px;
+            padding: 20px;
+            border: 2px solid #8B0000;
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #8B0000;
+            font-size: 24px;
+        }
+
+        .code-box {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .timer {
+            margin-left: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #FF4500;
+        }
+
+        .footer {
+            margin-top: 20px;
+            color: #8B0000;
+        }
+
+        .footer a {
+            color: #8B0000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Code is visible to the students</h1>
+
+        <!-- Display the generated code -->
+        <div>
+            <div class="code-box" id="codeBox">ABC123XYZ</div>
+            <div class="timer" id="timer">3</div> <!-- Timer for 3 seconds -->
+        </div>
+
+        <!-- Expiry message -->
+        <div class="footer">
+            <p>Code will expire in <span id="expireTime">3</span> seconds, and you will be directed to the <a href="index.html">Welcome Page</a> automatically.</p>
+        </div>
+    </div>
+
+    <script>
+        // Timer functionality to count down from 3 seconds
+        let countdown = 3;
+        const timerElement = document.getElementById("timer");
+        const expireTimeElement = document.getElementById("expireTime");
+
+        const countdownInterval = setInterval(() => {
+            countdown--;
+            timerElement.textContent = countdown;
+            expireTimeElement.textContent = countdown;
+
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+                // Redirect to the Faculty Dashboard page (index.html or dashboard.html)
+                window.location.href = "index.html";  // or "dashboard.html" if that's your dashboard URL
+            }
+        }, 1000); // 1-second interval
+    </script>
+
+</body>
+</html>
