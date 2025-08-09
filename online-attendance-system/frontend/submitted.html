@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Attendance Status</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 2rem 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(139, 0, 0, 0.2);
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+    }
+
+    h1 {
+      color: #8B0000;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .status-message {
+      font-size: 1.2rem;
+      color: #600000;
+      margin: 1rem 0;
+    }
+
+    .bottom-links {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .bottom-links a {
+      text-decoration: none;
+      color: #8B0000;
+      font-weight: 600;
+      border: 2px solid #8B0000;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+
+    .bottom-links a:hover {
+      background-color: #8B0000;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Attendance Submission</h1>
+
+    <!-- Status messages -->
+    <div class="status-message">✔️ Attendance marked successfully</div>
+    <div class="status-message">⚠️ Attendance marked late</div>
+    <div class="status-message">❌ Invalid attendance code</div>
+
+    <div class="bottom-links">
+      <a href="contactfaculty.html">Contact Faculty</a>
+      <a href="studentdashboard(1).html">Student Dashboard</a>
+      <a href="logout.html">Logout</a>
+    </div>
+  </div>
+
+
+<script>
+
+(function(){
+  const status = sessionStorage.getItem('att_status');
+  const msgs = document.querySelectorAll('.status-message');
+  // reset visibility
+  msgs.forEach(m => m.style.display='none');
+  if(status==='success') {
+    msgs[0].style.display='block'; // ✔️
+  } else if(status==='late') {
+    msgs[1].style.display='block'; // ⚠️ (not used yet)
+  } else if(status==='error') {
+    msgs[2].style.display='block'; // ❌
+  } else {
+    // default hide all
+  }
+})();
+
+</script>
+</body>
+</html>

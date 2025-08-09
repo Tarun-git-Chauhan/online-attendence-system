@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="79010fd6-7f8a-43d9-823c-a0c155b0b340" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ForAnisha.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/ForgotPass.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/attendancesummary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/contactfaculty.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/history.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/loginpage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/logout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/markattendance.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/profile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/studentdashboard(1).html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/submitted.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/sustainable.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/viewattendance.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Online Attendance System.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance-backend/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance-backend/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance-backend/.idea/attendance-backend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance-backend/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance-backend/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance-backend/controllers/attendanceController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance-backend/controllers/authController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance-backend/controllers/authMiddleware.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance-backend/db/db.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance-backend/hashPassword.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance-backend/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance-backend/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance-backend/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance-backend/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance-backend/routes/attendanceRoutes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance-backend/routes/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance-backend/routes/authRoutes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance-backend/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attendance-backend/test.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Tarun-git-Chauhan"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Tarun-git-Chauhan/online-attendence-system.git",
+    "accountId": "f814069d-a7f3-48e4-93ac-c6f9179789fc"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="312AcTYH6QuR77CNPiVTzzEGGA2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.index.js.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "dev",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "C:/Users/tarun/AppData/Roaming/JetBrains/IntelliJIdea2024.3/node/versions/22.18.0/node",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26574.91" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26574.91" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="79010fd6-7f8a-43d9-823c-a0c155b0b340" name="Changes" comment="" />
+      <created>1754711873560</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1754711873560</updated>
+      <workItem from="1754711875894" duration="4961000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
