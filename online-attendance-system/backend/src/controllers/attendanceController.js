@@ -80,7 +80,7 @@ export async function history(req, res) {
 }
 
 /**
- * GET /api/attendance/summary?userId=..&course=..&section=..
+ * GET didattendance/summary?userId=..&course=..&section=..
  * Computes simple counts from attendance_records for now.
  */
 export async function summary(req, res) {

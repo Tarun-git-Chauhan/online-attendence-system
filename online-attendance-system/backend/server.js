@@ -10,9 +10,25 @@ import facultyRoutes from './src/routes/faculty.js';
 
 const app = express();
 const PORT = process.env.PORT || 4000;
-const corsOrigin = process.env.CORS_ORIGIN || '*';
 
-app.use(cors({ origin: corsOrigin, credentials: true }));
+// --- CORS: allow your JetBrains local server (63342) ---
+const ALLOWED_ORIGINS = [
+  'http://localhost:63342',
+  'http://127.0.0.1:63342'
+];
+
+app.use(cors({
+  origin(origin, cb) {
+    if (!origin) return cb(null, true);              // allow Postman / curl (no origin)
+    if (ALLOWED_ORIGINS.includes(origin)) return cb(null, true);
+    return cb(new Error('Not allowed by CORS: ' + origin));
+  },
+  methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
+  allowedHeaders: ['Content-Type','Authorization'],
+  credentials: false                                  // we’re not using cookies
+}));
+
+app.options('*', cors());                             // handle preflight quickly
 app.use(express.json());
 app.use(morgan('dev'));
 
